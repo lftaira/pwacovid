@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/14d78620-1652-4d82-be0d-164622021f1b/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/covidinfos",
+    "appService.deploySubpath": "publish"
+}
