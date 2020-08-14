@@ -39,3 +39,4 @@
 /Users/luiztaira/Projects/CovidInfo/obj/Debug/netcoreapp3.1/CovidInfo.pdb
 /Users/luiztaira/Projects/CovidInfo/obj/Debug/netcoreapp3.1/CovidInfo.genruntimeconfig.cache
 /Users/luiztaira/Projects/CovidInfo/obj/Debug/netcoreapp3.1/CovidInfo.csproj.CopyComplete
+/Users/luiztaira/Projects/CovidInfo/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll

@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using CovidInfo.Services.Interfaces;
+using CovidInfo.Services.Implementation;
+
 
 namespace CovidInfo
 {
@@ -24,6 +27,12 @@ namespace CovidInfo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddMvc(option => option.EnableEndpointRouting = false);
+
+            services.AddHttpClient<ICovidService, CovidService>(client =>
+            {
+                client.BaseAddress = new Uri("https://covid19-brazil-api.now.sh/api/report/v1/brazil/uf/sp");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

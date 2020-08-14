@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "MYKX1h1ZDXsq7pqlrmGzGa5YeG8xPuUdjSup5kOP2k5C9zzgzI/niSFfeQUJQS/c7aK+SuW7wkn/qyWApkaC1A==",
+  "dgSpecHash": "TSMFQSkUvhx1/zaNInD+R8j90iB265cS/hFu2UBdcplpNQgQchfXOrvZVNgVhTyFAaL9qld6MUP4LmK0A68XRw==",
   "success": true,
   "projectFilePath": "/Users/luiztaira/Projects/CovidInfo/CovidInfo.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/luiztaira/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

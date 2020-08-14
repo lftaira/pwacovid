@@ -6,20 +6,24 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CovidInfo.Models;
+using CovidInfo.Services.Interfaces;
 
 namespace CovidInfo.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ICovidService _covidService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ICovidService CovidService)
         {
             _logger = logger;
+            _covidService = CovidService;
         }
 
         public IActionResult Index()
         {
+            var lista = _covidService.GetStatusEstados();
             return View();
         }
 
