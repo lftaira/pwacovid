@@ -52,19 +52,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/luiztaira/.nuget/packages/": {}
+    "C:\\Users\\lftai\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/luiztaira/Projects/CovidInfo/CovidInfo.csproj",
+      "projectUniqueName": "c:\\Users\\lftai\\Documents\\Repos\\pwacovid\\CovidInfo.csproj",
       "projectName": "CovidInfo",
-      "projectPath": "/Users/luiztaira/Projects/CovidInfo/CovidInfo.csproj",
-      "packagesPath": "/Users/luiztaira/.nuget/packages/",
-      "outputPath": "/Users/luiztaira/Projects/CovidInfo/obj/",
+      "projectPath": "c:\\Users\\lftai\\Documents\\Repos\\pwacovid\\CovidInfo.csproj",
+      "packagesPath": "C:\\Users\\lftai\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\lftai\\Documents\\Repos\\pwacovid\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/luiztaira/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\lftai\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -109,7 +109,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.300/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -6,6 +6,6 @@ namespace CovidInfo.Services.Interfaces
 {
     public interface ICovidService
     {
-        Estado GetStatusEstados();
+        Task<Estado> GetStatusEstados();
     }
 }

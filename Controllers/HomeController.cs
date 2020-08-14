@@ -21,9 +21,9 @@ namespace CovidInfo.Controllers
             _covidService = CovidService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var lista = _covidService.GetStatusEstados();
+            var estado = await _covidService.GetStatusEstados();
             return View();
         }
 

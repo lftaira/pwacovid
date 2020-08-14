@@ -15,10 +15,10 @@ namespace CovidInfo.Services.Implementation
         {
             _httpClient = httpClient;
         }
-        public Estado GetStatusEstados()
+        public async Task<Estado> GetStatusEstados()
         {
-            var httpResponse =  _httpClient.GetAsync(_httpClient.BaseAddress.AbsoluteUri);
-            return JsonConvert.DeserializeObject<Estado>(httpResponse.Result.Content.ToString());
+            var httpResponse =  await _httpClient.GetAsync(_httpClient.BaseAddress.AbsoluteUri);
+            return JsonConvert.DeserializeObject<Estado>(await httpResponse.Content.ReadAsStringAsync());
 
         }
     }
