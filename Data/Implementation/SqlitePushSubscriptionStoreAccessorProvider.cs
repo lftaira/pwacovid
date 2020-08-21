@@ -1,10 +1,11 @@
 using System;
 using CovidInfo.Data.Interface;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace CovidInfo.Data.Implementation
 {
-    public class SqlitePushSubscriptionStoreAccessorProvider
+    public class SqlitePushSubscriptionStoreAccessorProvider : IPushSubscriptionStoreAccessorProvider
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IServiceProvider _serviceProvider;

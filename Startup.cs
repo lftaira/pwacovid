@@ -33,6 +33,11 @@ namespace CovidInfo
             {
                 client.BaseAddress = new Uri("https://covid19-brazil-api.now.sh/api/report/v1/brazil/uf/sp");
             });
+
+            services.AddPushSubscriptionStore(Configuration)
+                .AddPushNotificationService(Configuration);
+
+            services.AddSingleton<ICovidService, CovidService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
