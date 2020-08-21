@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lftai\\Documents\\Repos\\pwacovid\\CovidInfo.csproj": {}
+    "/Users/luiztaira/Projects/CovidInfo/CovidInfo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lftai\\Documents\\Repos\\pwacovid\\CovidInfo.csproj": {
+    "/Users/luiztaira/Projects/CovidInfo/CovidInfo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lftai\\Documents\\Repos\\pwacovid\\CovidInfo.csproj",
+        "projectUniqueName": "/Users/luiztaira/Projects/CovidInfo/CovidInfo.csproj",
         "projectName": "CovidInfo",
-        "projectPath": "C:\\Users\\lftai\\Documents\\Repos\\pwacovid\\CovidInfo.csproj",
-        "packagesPath": "C:\\Users\\lftai\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lftai\\Documents\\Repos\\pwacovid\\obj\\",
+        "projectPath": "/Users/luiztaira/Projects/CovidInfo/CovidInfo.csproj",
+        "packagesPath": "/Users/luiztaira/.nuget/packages/",
+        "outputPath": "/Users/luiztaira/Projects/CovidInfo/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lftai\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/luiztaira/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -36,6 +36,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Lib.Net.Http.WebPush": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
@@ -59,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
         }
       }
     }

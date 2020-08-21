@@ -1,5 +1,5 @@
-﻿// var blogService = require('./blogService.js');
-// var testPushService = require('./testPushService.js');
+﻿var blogService = require('./blogService.js');
+var testPushService = require('./testPushService.js');
 var serviceWorker = require('./swRegister.js');
 var localization = require('./localization.js');
 var gyroscope = require('./gyroscope.js');
