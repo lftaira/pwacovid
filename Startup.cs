@@ -10,7 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using CovidInfo.Services.Interfaces;
 using CovidInfo.Services.Implementation;
-
+using Microsoft.AspNetCore.Http;
+using CovidInfo.Data.Implementation;
 
 namespace CovidInfo
 {
@@ -37,7 +38,7 @@ namespace CovidInfo
             services.AddPushSubscriptionStore(Configuration)
                 .AddPushNotificationService(Configuration);
 
-            services.AddSingleton<ICovidService, CovidService>();
+            // services.AddSingleton<ICovidService, CovidService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,11 +55,27 @@ namespace CovidInfo
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+           app.UseStaticFiles(new StaticFileOptions(){
+                OnPrepareResponse = (context) => {
+                    var header = context.Context.Response.GetTypedHeaders();
 
+                    header.CacheControl = new Microsoft.Net.Http.Headers.CacheControlHeaderValue(){
+                        Public = true,
+                        MaxAge = TimeSpan.FromDays(30)
+                    };
+                }
+            });
+
+            
             app.UseRouting();
 
             app.UseAuthorization();
+
+             using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                PushSubscriptionContext context = serviceScope.ServiceProvider.GetService<PushSubscriptionContext>();
+                context.Database.EnsureCreated();
+            }
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,7 +1,40 @@
-﻿@{
+﻿
+@model DtoListaEstado
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Informações sobre COVID19</h1>
+</div>
+
+<div class="container">
+    <div class="mt-4">
+        <h2>Quantidade de casos por estado</h2>
+    </div>
+
+    @foreach (var estado in Model.Data)
+    {
+        <div class="card mt-3 mb-3 mw-100">
+            <div class="card-body flex-column flex-md-row">
+                <div class="col-sm-4">
+                    @* <img class="mr-3 align-self-start rounded float-left img-consulta" src="~/imgs/@receita.Imagem" alt=""> *@
+                </div>
+                <div class="col-sm-8">
+                    <h3 class="card-title">
+                        @estado.Uf
+                    </h3>
+                    <p class="card-text">
+                        Casos confirmados: @estado.Cases
+                    </p>
+                    <p class="card-text">
+                        <small class="text-muted">Mortes: @estado.Deaths</small>
+                    </p>
+                    <p class="card-text">
+                        <small class="text-muted">Suspeitas: @estado.Suspects</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
 </div>

@@ -14,17 +14,19 @@ namespace CovidInfo.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ICovidService _covidService;
+        private readonly IPushService _pushService;
 
-        public HomeController(ILogger<HomeController> logger, ICovidService CovidService)
+        public HomeController(ILogger<HomeController> logger, ICovidService CovidService, IPushService PushService)
         {
             _logger = logger;
             _covidService = CovidService;
+            _pushService = PushService;
         }
 
         public async Task<IActionResult> Index()
         {
-            var estado = await _covidService.GetStatusEstados();
-            return View();
+            var estados = await _covidService.GetEstados();
+            return View(estados);
         }
 
         public IActionResult Privacy()
