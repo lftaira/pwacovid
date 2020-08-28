@@ -34,6 +34,13 @@ namespace CovidInfo.Controllers
             return View();
         }
 
+        public async Task<JsonResult> GetInfoStates()
+        {
+            var estados = await _covidService.GetEstados();
+            return Json(estados);
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
