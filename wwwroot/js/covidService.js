@@ -1,9 +1,9 @@
 ﻿define(['./template.js', '../lib/showdown/showdown.js', './clientStorage.js'], 
 function (template, showdown, clientStorage) {
 
-    var blogLatestPostsUrl = '/Home/LatestBlogPosts/';
-    var blogPostUrl = '/Home/Post/?link=';
-    var blogMorePostsUrl = '/Home/MoreBlogPosts/?oldestBlogPostId=';
+    var blogLatestPostsUrl = '/Home/GetInfoStates/';
+    // var blogPostUrl = '/Home/Post/?link=';
+    // var blogMorePostsUrl = '/Home/MoreBlogPosts/?oldestBlogPostId=';
 
     function fetchPromise(url, link, text) {
 
@@ -49,41 +49,50 @@ function (template, showdown, clientStorage) {
     }
 
     function loadLatestBlogPosts() {
-        loadData(blogLatestPostsUrl);
-    }
+        fetch(blogPostUrl)
+            .then(function (response) {
+                return response.json();
+        }).then(function (data) {
+            console.log(data);
+        });
+        }
 
-    function loadBlogPost(link) {
+    // function loadLatestBlogPosts() {
+    //     loadData(blogLatestPostsUrl);
+    // }
 
-        fetchPromise(blogPostUrl, link, true)
-            .then(function (status) {
-                $('#connection-status').html(status);
+    // function loadBlogPost(link) {
 
-                clientStorage.getPostText(link)
-                    .then(function (data) {
-                        if (!data) {
+    //     fetchPromise(blogPostUrl, link, true)
+    //         .then(function (status) {
+    //             $('#connection-status').html(status);
 
-                            var contentNotFound = $('#blog-content-not-found')
-                                .html().replace(/{{Link}}/g, link)
-                                ;
+    //             clientStorage.getPostText(link)
+    //                 .then(function (data) {
+    //                     if (!data) {
 
-                            template.showBlogItem(contentNotFound, link);
-                        } else {
-                            var converter = new showdown.Converter();
-                            html = converter.makeHtml(data);
-                            template.showBlogItem(html, link);
-                        }
-                        window.location = '#' + link;
-                    })
-            });
-    }
+    //                         var contentNotFound = $('#blog-content-not-found')
+    //                             .html().replace(/{{Link}}/g, link)
+    //                             ;
 
-    function loadMoreBlogPosts() {
-        loadData(blogMorePostsUrl + clientStorage.getOldestBlogPostId());
-    }
+    //                         template.showBlogItem(contentNotFound, link);
+    //                     } else {
+    //                         var converter = new showdown.Converter();
+    //                         html = converter.makeHtml(data);
+    //                         template.showBlogItem(html, link);
+    //                     }
+    //                     window.location = '#' + link;
+    //                 })
+    //         });
+    // }
+
+    // function loadMoreBlogPosts() {
+    //     loadData(blogMorePostsUrl + clientStorage.getOldestBlogPostId());
+    // }
 
     return {
         loadLatestBlogPosts: loadLatestBlogPosts,
-        loadBlogPost: loadBlogPost,
-        loadMoreBlogPosts: loadMoreBlogPosts
+        // loadBlogPost: loadBlogPost,
+        // loadMoreBlogPosts: loadMoreBlogPosts
     }
 });

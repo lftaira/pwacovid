@@ -1,4 +1,4 @@
-﻿var blogService = require('./blogService.js');
+﻿var covidService = require('./covidService.js');
 var testPushService = require('./testPushService.js');
 var serviceWorker = require('./swRegister.js');
 var localization = require('./localization.js');
@@ -23,13 +23,13 @@ if ('BackgroundFetchManager' in self) {
 }
 
 window.pageEvents = {
-    loadBlogPost: function (link) {
-        console.log('loadBlogPost');
-        blogService.loadBlogPost(link);
-    },
-    loadMoreBlogPosts: function () {
-        blogService.loadMoreBlogPosts();
-    },
+    // loadBlogPost: function (link) {
+    //     console.log('loadBlogPost');
+    //     blogService.loadBlogPost(link);
+    // },
+    // loadMoreBlogPosts: function () {
+    //     blogService.loadMoreBlogPosts();
+    // },
     tryAddHomeScreen: function () {
         defferedPrompt.prompt();
         defferedPrompt.userChoice.then((choiceResult) => {
@@ -98,8 +98,8 @@ window.pageEvents = {
     }
 };
 
-blogService.loadLatestBlogPosts();
-testPushService.bindSendNotification();
-gyroscope.init();
-gyroscope.animate();
+// blogService.loadLatestBlogPosts();
+// testPushService.bindSendNotification();
+// gyroscope.init();
+// gyroscope.animate();
 

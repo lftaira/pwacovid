@@ -3,4 +3,4 @@
 
 // Write your JavaScript code.
 
-System.import('./js/app.js');
+System.import('./js/app2.js');
