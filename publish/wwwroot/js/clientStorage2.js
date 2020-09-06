@@ -1,6 +1,6 @@
 define([], function () {
     var oldestBlogPostId = "";
-    var limit = 6;
+    var limit = 10;
     var blogInstance = localforage.createInstance({
         name: 'blog'
     });
