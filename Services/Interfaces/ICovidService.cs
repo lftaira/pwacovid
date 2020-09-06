@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CovidInfo.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CovidInfo.Services.Interfaces
 {
@@ -9,5 +10,7 @@ namespace CovidInfo.Services.Interfaces
         Task<Estado> GetStatusEstado();
 
         Task<DtoListaEstado> GetEstados();
+
+        Task<DtoListaEstado> GetOlderEstados();
     }
 }

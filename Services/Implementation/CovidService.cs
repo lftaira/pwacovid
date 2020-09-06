@@ -24,6 +24,14 @@ namespace CovidInfo.Services.Implementation
             return JsonConvert.DeserializeObject<DtoListaEstado>(await httpResponse.Content.ReadAsStringAsync());
         }
 
+        public async Task<DtoListaEstado> GetOlderEstados()
+        {
+            var httpResponse =  await _httpClient.GetAsync("https://covid19-brazil-api.now.sh/api/report/v1");
+            var json = await httpResponse.Content.ReadAsStringAsync();
+            // var convertido = JsonConvert.DeserializeObject<List<Estado>>(json);
+            return JsonConvert.DeserializeObject<DtoListaEstado>(await httpResponse.Content.ReadAsStringAsync());
+        }
+
         public async Task<Estado> GetStatusEstado()
         {
             var httpResponse =  await _httpClient.GetAsync(_httpClient.BaseAddress.AbsoluteUri);
