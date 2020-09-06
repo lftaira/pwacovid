@@ -5,19 +5,27 @@ define([], function () {
         template = template.replace('{{Cases}}', item.cases);
         template = template.replace('{{Deaths}}', item.deaths);
         template = template.replace('{{Suspects}}', item.suspects);
-     return template;
+        return template;
     }
 
     function appendBlogList(items) {
-     var cardHtml = '';
-     for (var i = 0; i < items.data.length; i++) {
-     cardHtml += generateBlogItem(items.data[i]);
+        var cardHtml = '';
+        for (var i = 0; i < items.length; i++) {
+            cardHtml += generateBlogItem(items[i]);
 
+        }
+        $('.blog-list').append(cardHtml);
     }
-    $('.blog-list').append(cardHtml);
-   }
-   return {
-    appendBlogList: appendBlogList
-    // showBlogItem: showBlogItem
-   }
-   });
+
+    function showBlogItem(html, link) {
+        var template = $('#blog-item').html();
+        template = template.replace('{{Link}}', link);
+        template = template.replace('{{Content}}', html);
+        $('#blog-item-container').html(template);
+    }
+
+    return {
+        appendBlogList: appendBlogList,
+        showBlogItem: showBlogItem
+    }
+});
